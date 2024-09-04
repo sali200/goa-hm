@@ -1,0 +1,11 @@
+h2{
+    color: darkred;
+    text-shadow: 6px 6px 6px black;
+    font-style: initial;
+    font-weight: normal;
+    font-family: fantasy;
+    -ms-text-kashida-space: 14px;
+}
+body{
+    background-color: beige;
+}
