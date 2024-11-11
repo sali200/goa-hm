@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Entrance Animation</title>
+    <style>
+        .element {
+            opacity: 0;
+            position: relative;
+        }
+
+        .from-top {
+            animation: fromTop 2s forwards;
+        }
+
+        .from-bottom {
+            animation: fromBottom 2s forwards;
+        }
+
+        .from-left {
+            animation: fromLeft 2s forwards;
+        }
+
+        .from-right {
+            animation: fromRight 2s forwards;
+        }
+
+        @keyframes fromTop {
+            0% { opacity: 0; top: -100px; }
+            100% { opacity: 1; top: 0; }
+        }
+
+        @keyframes fromBottom {
+            0% { opacity: 0; bottom: -100px; }
+            100% { opacity: 1; bottom: 0; }
+        }
+
+        @keyframes fromLeft {
+            0% { opacity: 0; left: -100px; }
+            100% { opacity: 1; left: 0; }
+        }
+
+        @keyframes fromRight {
+            0% { opacity: 0; right: -100px; }
+            100% { opacity: 1; right: 0; }
+        }
+    </style>
+</head>
+<body>
+    <p class="element from-top">This text comes from the top.</p>
+    <button class="element from-bottom">Click Me!</button>
+    <div class="gallery element from-left">
+        <img src="image1.jpg" alt="Image 1">
+        <img src="image2.jpg" alt="Image 2">
+        <img src="image3.jpg" alt="Image 3">
+        <img src="image4.jpg" alt="Image 4">
+        <img src="image5.jpg" alt="Image 5">
+        <img src="image6.jpg" alt="Image 6">
+        <img src="image7.jpg" alt="Image 7">
+        <img src="image8.jpg" alt="Image 8">
+        <img src="image9.jpg" alt="Image 9">
+        <img src="image10.jpg" alt="Image 10">
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: #00bfa5;
+    transition: transform 0.3s ease-in-out;
+}
+
+.square:hover {
+    transform: scale(1.5);
+}
+
+/* Additional transformation classes for individual activation */
+.rotate {
+    transform: rotate(45deg);
+}
+
+.skew {
+    transform: skew(20deg, 20deg);
+}
+
+.translate {
+    transform: translate(50px, 50px);
+}
