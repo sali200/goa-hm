@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Layout</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-areas: 
+                "header header header"
+                "sidebar sect2 sect3"
+                "sidebar sect4 sect3"
+                "sidebar sect5 sect5"
+                "navigation navigation navigation";
+            grid-template-columns: 1fr 2fr 2fr;
+            grid-template-rows: auto 1fr 1fr 1fr auto;
+            gap: 10px;
+            height: 100vh;
+            margin: 0;
+        }
+        header {
+            grid-area: header;
+            background-color: green;
+            text-align: center;
+            padding: 10px;
+        }
+        .sidebar {
+            grid-area: sidebar;
+            background-color: green;
+            padding: 10px;
+        }
+        .navigation {
+            grid-area: navigation;
+            background-color: green;
+            padding: 10px;
+        }
+        .sect1 {
+            grid-area: sect1;
+            background-color: red;
+            padding: 10px;
+        }
+        .sect2 {
+            grid-area: sect2;
+            background-color: orange;
+            padding: 10px;
+        }
+        .sect3 {
+            grid-area: sect3;
+            background-color: red;
+            padding: 10px;
+        }
+        .sect4 {
+            grid-area: sect4;
+            background-color: red;
+            padding: 10px;
+        }
+        .sect5 {
+            grid-area: sect5;
+            background-color: orange;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>Header</header>
+    <div class="sidebar">Sidebar</div>
+    <div class="sect1">Sect1</div>
+    <div class="sect2">Sect2</div>
+    <div class="sect3">Sect3</div>
+    <div class="sect4">Sect4</div>
+    <div class="sect5">Sect5</div>
+    <div class="navigation">Navigation</div>
+</body>
+</html>
