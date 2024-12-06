@@ -1,0 +1,158 @@
+/* Transitioning the background color over 2 seconds */
+body {
+    transition: background-color 2s;
+}
+
+/* Transitioning the width over 1 second */
+div {
+    transition: width 1s;
+}
+
+/* Transitioning the height with a delay of 0.5 seconds */
+div {
+    transition: height 1s 0.5s;
+}
+
+/* Transitioning multiple properties */
+div {
+    transition: all 1s ease-in-out;
+}
+
+/* Transitioning the opacity */
+div {
+    transition: opacity 1s;
+}
+/* Rotating an element by 45 degrees */
+div {
+    transform: rotate(45deg);
+}
+
+/* Scaling an element to twice its size */
+.scale {
+    transform: scale(2);
+}
+
+/* Translating an element 50px to the right and 100px down */
+.translate {
+    transform: translate(50px, 100px);
+}
+
+/* Skewing an element by 30 degrees on the X axis */
+.skewX {
+    transform: skewX(30deg);
+}
+
+/* Skewing an element by 20 degrees on the Y axis */
+.skewY {
+    transform: skewY(20deg);
+}
+/* Simple bounce animation */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.fade-in {
+    animation: fadeIn 1s forwards;
+}
+
+/* Slide in from left */
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+.slide-in {
+    animation: slideIn 1s forwards;
+}
+
+/* Rotate animation */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.rotate {
+    animation: rotate 3s infinite linear;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+/* Centering items in a flex container */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Space-between layout */
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Align items to start */
+.align-start {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Wrap items */
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Column layout */
+.column {
+    display: flex;
+    flex-direction: column;
+}
+/* Basic 2x2 grid */
+.grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Grid with gap */
+.grid-gap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* Auto-fill grid */
+.grid-auto-fill {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+/* Grid template areas */
+.grid-areas {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "sidebar content";
+}
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.content { grid-area: content; }
+
+/* Fractional units */
+div {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
