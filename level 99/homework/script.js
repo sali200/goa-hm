@@ -40,3 +40,6 @@ const inventory = {
 };
 
 inventory.displayAvailableProducts();
+
+
+
