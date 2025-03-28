@@ -1,0 +1,143 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #ecf0f1;
+    --accent-color: #3498db;
+    --font-family: 'Arial', sans-serif;
+    --header-height: 60px;
+    --padding: 20px;
+    --margin: 20px;
+    --border-radius: 10px;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-color);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: var(--margin);
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+section {
+    padding: var(--padding);
+    text-align: center;
+}
+
+.book-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: var(--padding);
+    margin: var(--margin) auto;
+    max-width: 600px;
+}
+
+.book-img {
+    width: 150px;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--margin);
+}
+
+.book-details {
+    text-align: left;
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: var(--margin);
+}
+
+h3 {
+    color: var(--accent-color);
+    margin-bottom: var(--margin);
+}
+
+p, ul, li {
+    color: var(--primary-color);
+    margin-bottom: var(--margin);
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.btn {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+footer {
+    text-align: center;
+    padding: var(--padding);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-bottom: var(--margin);
+    }
+
+    .book-content {
+        padding: 10px;
+    }
+
+    ul {
+        padding-left: 10px;
+    }
+}

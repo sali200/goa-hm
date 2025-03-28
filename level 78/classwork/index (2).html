@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-600 p-4 text-white text-center">
+        <h1 class="text-3xl font-bold">My Responsive Website</h1>
+    </header>
+    <main class="p-6">
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">About Us</h2>
+            <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </section>
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-2">Service 1</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque ipsa dolorem accusamus id? Aut, dicta facere. Fugit rerum aliquid optio, tempore, et mollitia aspernatur quaerat quis pariatur distinctio animi culpa?</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-2">Service 2</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem dolores non deserunt eveniet libero nisi pariatur! Quisquam officia quos tempora sed eveniet impedit, cupiditate natus harum minus possimus eum velit..</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-2">Service 3</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, doloremque vero, tenetur cupiditate consequuntur alias quisquam culpa dolore, necessitatibus quia reprehenderit fuga. Nobis blanditiis necessitatibus optio quasi nulla placeat dolorum!</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
+            <form class="bg-white p-6 rounded-lg shadow-lg max-w-md mx-auto">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700">Name</label>
+                    <input type="text" id="name" class="w-full p-2 border border-gray-300 rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700">Email</label>
+                    <input type="email" id="email" class="w-full p-2 border border-gray-300">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700">Message</label>
+                    <textarea id="message" class="w-full p-2 border border-gray-300 "></textarea>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer class="bg-blue-600 p-4 text-white text-center">
+        <p>&copy; 2024 My Responsive Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>

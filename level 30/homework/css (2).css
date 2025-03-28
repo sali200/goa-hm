@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(210, 210, 210);
+}
+.gaming{
+    text-shadow: 4px 4px 4px rgba(0, 0, 255, 0.372);
+    color: rgb(255, 6, 85);
+    font-size: 1.5em
+}
+.gaming{
+    text-decoration: line-through black;
+}
+.gaming{
+    text-transform: uppercase;
+    font-style: FANTASY;
+}

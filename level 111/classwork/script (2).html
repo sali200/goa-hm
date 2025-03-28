@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Tool</title>
+  <style>
+    .canvas {
+      width: 100%;
+      height: 400px;
+      border: 1px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .controls {
+      margin-top: 20px;
+    }
+    .button {
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Design Tool</h1>
+  <div class="canvas" id="designCanvas">
+    <p>Design will be shown here</p>
+  </div>
+  <div class="controls">
+    <button class="button" id="imageButton">Add Image</button>
+    <button class="button" id="designButton">Create Design</button>
+    <button class="button" id="finalButton">Finalize Design</button>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('designCanvas');
+    document.getElementById('imageButton').addEventListener('click', () => {
+      canvas.innerHTML = '<img src="https://via.placeholder.com/150" alt="Placeholder Image">';
+    });
+    document.getElementById('designButton').addEventListener('click', () => {
+      canvas.innerHTML += '<div style="width: 100px; height: 100px; background-color: red; margin-top: 10px;">Design Element</div>';
+    });
+    document.getElementById('finalButton').addEventListener('click', () => {
+      alert('Design finalized!');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Propagation Example</title>
+</head>
+<body>
+    <div id="outer" style="padding: 20px; border: 2px solid red;">
+        Outer
+        <div id="inner" style="padding: 20px; border: 2px solid blue;">
+            Inner
+            <button id="button">Click Me</button>
+        </div>
+    </div>
+
+    <script>
+        // Add event listeners
+        document.getElementById('outer').addEventListener('click', function () {
+            console.log('outer clicked');
+        });
+
+        document.getElementById('inner').addEventListener('click', function () {
+            console.log('inner clicked');
+        });
+
+        document.getElementById('button').addEventListener('click', function () {
+            console.log('button clicked');
+        });
+    </script>
+</body>
+</html>

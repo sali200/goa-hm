@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Counter</title>
+</head>
+<body>
+    <h1>Simple Counter</h1>
+    <div id="counter">0</div>
+    <button onclick="increase()">Increase</button>
+    <button onclick="decrease()">Decrease</button>
+    <button onclick="increaseByTen()">Increase by 10</button>
+    <button onclick="decreaseByTen()">Decrease by 10</button>
+
+    <script>
+        function getCounterValue() {
+            // Get the current counter value from the div
+            return parseInt(document.getElementById('counter').textContent, 10);
+        }
+
+        function updateCounter(value) {
+            // Update the counter value in the div
+            document.getElementById('counter').textContent = value;
+        }
+
+        function increase() {
+            let counter = getCounterValue();
+            counter += 1;
+            updateCounter(counter);
+        }
+
+        function decrease() {
+            let counter = getCounterValue();
+            counter -= 1;
+            updateCounter(counter);
+        }
+
+        function increaseByTen() {
+            let counter = getCounterValue();
+            counter += 10;
+            updateCounter(counter);
+        }
+
+        function decreaseByTen() {
+            let counter = getCounterValue();
+            counter -= 10;
+            updateCounter(counter);
+        }
+    </script>
+</body>
+</html>
