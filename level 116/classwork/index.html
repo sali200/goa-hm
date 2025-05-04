@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>რეგისტრაცია</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .warning {
+            background-color: red;
+            color: white;
+        }
+        .success {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <h2>რეგისტრაციის ფორმა</h2>
+    <form id="registrationForm">
+        <input type="text" id="name" placeholder="სახელი"><br><br>
+        <input type="text" id="surname" placeholder="გვარი"><br><br>
+        <input type="email" id="email" placeholder="ემაილი"><br><br>
+        <input type="password" id="password" placeholder="პაროლი"><br><br>
+        <input type="password" id="confirmPassword" placeholder="დადასტურებული პაროლი"><br><br>
+        <button type="button" onclick="validateForm()">რეგისტრაცია</button>
+    </form>
+    <p id="message"></p>
+
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let surname = document.getElementById("surname").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+            let message = document.getElementById("message");
+            let body = document.body;
+
+            if (!name || !surname || !email || !password || !confirmPassword) {
+                alert("ყველა ველის შევსება სავალდებულოა!");
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                body.className = "warning";
+                message.textContent = "Warning!";
+            } else {
+                body.className = "success";
+                message.textContent = "Successfully login!";
+            }
+        }
+    </script>
+</body>
+</html>

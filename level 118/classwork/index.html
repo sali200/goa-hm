@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ტემპერატურის გადაყვანა</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+        }
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>ტემპერატურის გადაყვანა</h2>
+    <input type="number" id="temperature" placeholder="შეიყვანეთ ტემპერატურა">
+    <select id="unit">
+        <option value="C">ცელსიუსიდან ფარენჰეიტში</option>
+        <option value="F">ფარენჰეიტიდან ცელსიუსში</option>
+    </select>
+    <button onclick="convertTemperature()">გადაყვანა</button>
+    <div id="result"></div>
+
+    <script>
+        function convertTemperature() {
+            let temp = document.getElementById("temperature").value;
+            let unit = document.getElementById("unit").value;
+            let resultElement = document.getElementById("result");
+
+            if (temp === "") {
+                resultElement.textContent = "გთხოვთ შეიყვანოთ ტემპერატურა!";
+                return;
+            }
+
+            temp = parseFloat(temp);
+            let convertedTemp;
+
+            if (unit === "C") {
+                convertedTemp = (temp * 9/5) + 32;
+                resultElement.textContent = `${temp}°C = ${convertedTemp.toFixed(2)}°F`;
+            } else {
+                convertedTemp = (temp - 32) * 5/9;
+                resultElement.textContent = `${temp}°F = ${convertedTemp.toFixed(2)}°C`;
+            }
+        }
+    </script>
+</body>
+</html>
