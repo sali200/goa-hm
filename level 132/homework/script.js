@@ -45,3 +45,34 @@ const car2 = new Car("Honda", "Civic", 2018);
 
 
 
+
+class OtherDog{
+     call(name){
+        this.call=name
+     }
+}
+
+const OtherDogName = new OtherDog('Moli')
+
+console.log(`my dog's name is ${otherDogName}`)
+
+
+
+
+
+class OtherDog{
+    call(name){
+       this.name= name;
+    };
+};
+
+call() ;{
+   return  `Come here, ${this.name}!`;
+
+};
+
+let A = new OtherDog("Moli")
+
+console.log(`my dog's name is ${A.name }`)
+
+
