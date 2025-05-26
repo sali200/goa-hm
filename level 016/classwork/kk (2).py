@@ -1,1 +1,0 @@
-#gitubze asatvirti iyo vs coudidan

@@ -1,6 +1,0 @@
-email=input("enter your email")
-password=input('enter or create  a password for your email')
-email_true_form=('salomemoseshvili@gmail.com')
-password2=('goa is the best')
-print(email==email_true_form )
-print(password==password2)
