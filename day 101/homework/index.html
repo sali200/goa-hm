@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <input type="text" id="todoInput" placeholder="Add a todo">
+    <button onclick="addTodo()">Add Todo</button>
+    <ul id="todoList"></ul>
+
+    <script>
+        function loadTodos() {
+            let todos = JSON.parse(localStorage.getItem("todos")) || [];
+            let list = document.getElementById("todoList");
+            list.innerHTML = "";
+            todos.forEach((todo, index) => {
+                let li = document.createElement("li");
+                li.textContent = todo;
+
+                let deleteButton = document.createElement("button");
+                deleteButton.textContent = "Delete";
+                deleteButton.onclick = function () {
+                    deleteTodo(index);
+                };
+
+                li.appendChild(deleteButton);
+                list.appendChild(li);
+            });
+        }
+
+        function addTodo() {
+            let input = document.getElementById("todoInput");
+            let todoText = input.value; 
+
+            if (todoText === "") return;
+
+            let todos = JSON.parse(localStorage.getItem("todos")) || [];
+            todos.push(todoText);
+            localStorage.setItem("todos", JSON.stringify(todos));
+
+            input.value = "";
+            loadTodos();
+        }
+
+        function deleteTodo(index) {
+            let todos = JSON.parse(localStorage.getItem("todos")) || [];
+            todos.splice(index, 1);
+            localStorage.setItem("todos", JSON.stringify(todos));
+            loadTodos();
+        }
+
+        document.addEventListener("DOMContentLoaded", loadTodos);
+    </script>
+</body>
+</html>

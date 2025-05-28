@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage Name List</title>
+</head>
+<body>
+    <input type="text" id="nameInput" placeholder="Enter a name">
+    <button id="addButton">Add Name</button>
+
+    <script>
+        document.getElementById("addButton").addEventListener("click", function() {
+            let name = document.getElementById("nameInput").value;
+            if (name) {
+                let namesList = JSON.parse(localStorage.getItem("names")) && [];
+                namesList.push(name);
+                localStorage.setItem("names", JSON.stringify(namesList));
+                
+                console.log("Updated list:", namesList);
+            } else {
+                console.log("Please enter a valid name.");
+            }
+        });
+    </script>
+</body>
+</html>
