@@ -1,0 +1,50 @@
+body {
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+    width: 100vh;
+    background-color: #87CEFA; /* Light Blue */
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    position: absolute;
+    left: 40%;
+    width: 400px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+input, button, textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #4682B4;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4682B4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #5F9EA0;
+    transform: scale(1.05); /* Slight enlargement */
+}
+
+.dark-mode {
+    background-color: #222;
+    color: white;
+}

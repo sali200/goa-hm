@@ -1,0 +1,1 @@
+// to d0 listi maq sxva foldershi
