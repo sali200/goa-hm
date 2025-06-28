@@ -1,50 +1,63 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const taskInput = document.getElementById("taskInput");
-    const addTaskBtn = document.getElementById("addTaskBtn");
-    const taskList = document.getElementById("taskList");
-    const noteInput = document.getElementById("noteInput");
-    const saveNoteBtn = document.getElementById("saveNoteBtn");
-    const calendar = document.getElementById("calendar");
-    const loginBtn = document.getElementById("loginBtn");
-    const signUpBtn = document.getElementById("signUpBtn");
-    const toggleMode = document.getElementById("toggleMode");
+const input = document.getElementById('taskInput')
+const addBtn = document.getElementById('addBtn')
+const taskList = document.getElementById('taskList')
 
-    function loadTasks() {
-        taskList.innerHTML = localStorage.getItem("tasks") || "";
+let tasks = JSON.parse(localStorage.getItem('tasks')) || []
+render()
+
+addBtn.onclick = () => {
+  const text = input.value.trim()
+  if (text) {
+    tasks.push({ text })
+    input.value = ''
+    save()
+  }
+}
+
+function render() {
+  taskList.innerHTML = ''
+  tasks.forEach((task, i) => {
+    const li = document.createElement('li')
+
+    const span = document.createElement('span')
+    span.textContent = task.text
+
+    const edit = document.createElement('button')
+    edit.textContent = 'Edit'
+    edit.onclick = () => {
+      const newInput = document.createElement('input')
+      newInput.type = 'text'
+      newInput.value = task.text
+
+      const saveBtn = document.createElement('button')
+      saveBtn.textContent = 'Save'
+      saveBtn.onclick = () => {
+        tasks[i].text = newInput.value
+        save()
+      }
+
+      li.innerHTML = ''
+      li.appendChild(newInput)
+      li.appendChild(saveBtn)
     }
 
-    addTaskBtn.addEventListener("click", () => {
-        if (taskInput.value.trim()) {
-            const li = document.createElement("li");
-            li.textContent = taskInput.value;
-            taskList.appendChild(li);
-            localStorage.setItem("tasks", taskList.innerHTML);
-            taskInput.value = "";
-        }
-    });
 
-    saveNoteBtn.addEventListener("click", () => {
-        localStorage.setItem("note", noteInput.value);
-    });
+    const del = document.createElement('button')
+    del.textContent = 'X'
+    del.onclick = () => {
+      tasks.splice(i, 1)
+      save()
+    }
 
-    loginBtn.addEventListener("click", () => {
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
-        if (localStorage.getItem(username) === password) {
-            alert("Login Successful!");
-        } else {
-            alert("Invalid Login!");
-        }
-    });
+    li.appendChild(span)
+    li.appendChild(edit)
+    li.appendChild(del)
+    taskList.appendChild(li)
+  })
+}
 
-    signUpBtn.addEventListener("click", () => {
-        localStorage.setItem(document.getElementById("username").value, document.getElementById("password").value);
-        alert("Sign-Up Successful!");
-    });
 
-    toggleMode.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-    });
-
-    loadTasks();
-});
+function save() {
+  localStorage.setItem('tasks', JSON.stringify(tasks))
+  render()
+}

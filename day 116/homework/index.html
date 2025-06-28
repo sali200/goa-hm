@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>მანქანების კოლექცია</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>ᲛᲐᲜᲥᲐᲜᲔᲑᲘ</h1>
+  <ul id="carList">
+    <li onclick="showCarInfo('bmw')">BMW M5</li>
+    <li onclick="showCarInfo('mercedes')">Mercedes-Benz C300</li>
+    <li onclick="showCarInfo('audi')">Audi RS5</li>
+  </ul>
+
+  <div id="carDisplay">
+    <img id="carImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE22q6BElRxvLtFys-PO2b3zHkMwM7vqTVJg&s" alt="მანქანის სურათი" />
+    <p id="carSpecs"></p>
+    <button onclick="playSound()">🔊 engineSound</button>
+    <button onclick="getCarInfo()">ℹ️ getInfo</button>
+  </div>
+
+  <audio id="carAudio" src=""></audio>
+  <script src="script.js"></script>
+</body>
+</html>
